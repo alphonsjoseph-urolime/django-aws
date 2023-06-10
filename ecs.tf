@@ -30,7 +30,7 @@ resource "aws_ecs_service" "prod_backend_web" {
   cluster         = "${aws_ecs_cluster.prod.id}"  
   task_definition = "${aws_ecs_task_definition.prod_backend_web.arn}"
   launch_type     = "FARGATE"
-  desired_count   = 2 
+  desired_count   = 3 
 
   load_balancer {
     target_group_arn = "${aws_lb_target_group.prod_backend.arn}"
